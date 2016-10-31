@@ -50,7 +50,6 @@ public class MaxDistance {
     public int maximumGapV2(final List<Integer> a) {
         if(a.size()<1) return 0;
         int maxDiff;
-        int i, j;
         int size = a.size();
         int RMax[] = new int[size];
         int LMin[] = new int[size];
@@ -58,19 +57,19 @@ public class MaxDistance {
         /* Construct LMin[] such that LMin[i] stores the minimum value
            from (arr[0], arr[1], ... arr[i]) */
         LMin[0] = a.get(0);
-        for (i = 1; i < size; i++)
+        for (int i = 1; i < size; i++)
             LMin[i] = Math.min(a.get(i), LMin[i - 1]);
 
         /* Construct RMax[] such that RMax[j] stores the maximum value
            from (arr[j], arr[j+1], ..arr[n-1]) */
         RMax[size - 1] = a.get(size - 1);
-        for (j = size - 2; j >= 0; j--)
+        for (int j = size - 2; j >= 0; j--)
             RMax[j] = Math.max(a.get(j), RMax[j + 1]);
 
         /* Traverse both arrays from left to right to find optimum j - i
            This process is similar to merge() of MergeSort */
-        i = 0;
-        j = 0;
+        int i = 0;
+        int j = 0;
         maxDiff = 0;
         while (j < size && i < size) {
             if (LMin[i] <= RMax[j]) {
