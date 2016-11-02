@@ -14,7 +14,7 @@ package com.guga.euler;
  * <p>
  * Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
  */
-public class P5_SumSquareDifference {
+public class P6_SumSquareDifference {
 
     public static void main(String[] args) {
         System.out.println(calculateV1(10));//TODO write junit
