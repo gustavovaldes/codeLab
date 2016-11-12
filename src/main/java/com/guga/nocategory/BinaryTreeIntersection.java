@@ -41,7 +41,7 @@ public class BinaryTreeIntersection {
         if (b == null)
             return true;//if b finish, it's already contained. to support case where is not at the end edges of a.
         if (a == null) return false;
-        if (a.item != b.item) return false;/*TODO it can be done at Node level really, just using the item value because the way I creating the nodes*/
+        if (a.item != b.item) return false;
         return equals(a.left, b.left) && equals(a.right, b.right);
     }
 }
